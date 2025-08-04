@@ -1,0 +1,312 @@
+/* src/App.css */
+:root {
+  --primaire: #ff6b8b;
+  --secondaire: #ffccd5;
+  --accent: #ff8fab;
+  --foncé: #a4133c;
+  --clair: #fff0f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ffccd5, #ffb3c6, #ff8fab);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  color: #333;
+}
+
+.container-anniversaire {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  position: relative;
+}
+
+.animation-fond {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.coeur-flottant {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.7);
+  animation: flotter 15s infinite linear;
+  user-select: none;
+}
+
+@keyframes flotter {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.contenu {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(164, 19, 60, 0.2);
+  padding: 2.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: var(--foncé);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sous-titre {
+  font-size: 1.4rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.compteur-temps {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.carte-temps {
+  background: linear-gradient(145deg, #ff8fab, #ff6b8b);
+  color: white;
+  border-radius: 15px;
+  padding: 1.5rem 1rem;
+  min-width: 100px;
+  box-shadow: 0 6px 15px rgba(164, 19, 60, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.carte-temps:hover {
+  transform: translateY(-10px);
+}
+
+.valeur-temps {
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.label-temps {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.message-amour {
+  background: var(--clair);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2.5rem auto;
+  max-width: 700px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: var(--foncé);
+}
+
+.message-amour p {
+  margin: 1rem 0;
+}
+
+.bouton-souvenirs {
+  background: var(--foncé);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(164, 19, 60, 0.4);
+  margin: 1.5rem 0;
+}
+
+.bouton-souvenirs:hover {
+  background: #800f2f;
+  transform: translateY(-3px);
+}
+
+.galerie-souvenirs {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: apparition 0.5s ease;
+}
+
+@keyframes apparition {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.controles-galerie {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.controles-galerie button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.controles-galerie button:hover {
+  background: var(--foncé);
+  transform: scale(1.1);
+}
+
+.carte-souvenir {
+  background: var(--clair);
+  border-radius: 15px;
+  padding: 1.5rem;
+}
+
+.placeholder-image {
+  height: 300px;
+  background: linear-gradient(135deg, #ffccd5, #ff8fab);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.citations-romantiques {
+  margin: 3rem 0;
+  font-style: italic;
+}
+
+blockquote {
+  max-width: 700px;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  background: rgba(255, 182, 193, 0.2);
+  border-left: 4px solid var(--foncé);
+  border-radius: 0 10px 10px 0;
+  text-align: left;
+  position: relative;
+}
+
+blockquote::before {
+  content: "";
+  font-size: 4rem;
+  position: absolute;
+  left: 10px;
+  top: -20px;
+  color: var(--accent);
+  opacity: 0.3;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed var(--accent);
+  color: var(--foncé);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.date-anniversaire {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: var(--accent);
+}
+
+/* Design responsive */
+@media (max-width: 768px) {
+  .contenu {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  .sous-titre {
+    font-size: 1.1rem;
+  }
+  
+  .carte-temps {
+    min-width: 80px;
+    padding: 1rem 0.5rem;
+  }
+  
+  .valeur-temps {
+    font-size: 2rem;
+  }
+  
+  .label-temps {
+    font-size: 1rem;
+  }
+
+  .placeholder-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .compteur-temps {
+    gap: 0.8rem;
+  }
+  
+  .carte-temps {
+    min-width: 70px;
+    padding: 0.8rem 0.3rem;
+  }
+  
+  .valeur-temps {
+    font-size: 1.7rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
