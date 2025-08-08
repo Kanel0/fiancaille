@@ -1,10 +1,12 @@
 // src/App.tsx
 import React, { useState, useEffect } from 'react';
 import './App.css';
-
-const AnniversaireFiancailles = () => {
-  // Date de vos fiançailles (AAAA, MM, JJ)
-  const dateFiancailles = new Date(2024, 5, 20); 
+import Mariage from './assets/mariage.jpg'
+import Mariage2 from './assets/mariage2.jpg'
+import Mariage3 from './assets/mariage3.jpg'
+const AnniversaireMariage = () => {
+  // Date de votre mariage (8 août 2024)
+  const dateMariage = new Date(2024, 7, 8); 
   const [tempsEcoule, setTempsEcoule] = useState({
     annees: 0,
     jours: 0,
@@ -17,16 +19,16 @@ const AnniversaireFiancailles = () => {
   
   // Vos souvenirs (à remplacer par vos photos)
   const souvenirs = [
-    { id: 1, titre: "La demande", description: "Le moment magique où nous avons dit oui pour toujours" },
-    { id: 2, titre: "Nos premières vacances", description: "Découvrir de nouveaux endroits ensemble" },
-    { id: 3, titre: "Célébration en famille", description: "Partager notre joie avec nos proches" },
-    { id: 4, titre: "Notre premier Noël", description: "Fêter les moments spéciaux ensemble" }
+    { id: 1, titre: "Notre mariage", description: "Le jour où nos vies se sont unies pour toujours", photo : Mariage  },
+    { id: 2, titre: "Notre mariage", description: "Le jour où nos vies se sont unies pour toujours" , photo : Mariage2},
+    { id: 3, titre: "Notre mariage", description: "Le jour où nos vies se sont unies pour toujours" , photo : Mariage3},
+    
   ];
 
   useEffect(() => {
     const calculerTempsEcoule = () => {
       const maintenant = new Date();
-      const difference = maintenant.getTime() - dateFiancailles.getTime();
+      const difference = maintenant.getTime() - dateMariage.getTime();
       
       // Calcul des unités de temps
       const secondes = Math.floor(difference / 1000) % 60;
@@ -66,8 +68,8 @@ const AnniversaireFiancailles = () => {
       
       <div className="contenu">
         <header>
-          <h1>Joyeux 1er Anniversaire de Fiançailles !</h1>
-          <p className="sous-titre">Célébrons 365 jours d'amour, d'engagement et de beaux souvenirs</p>
+          <h1>Joyeux 1er Anniversaire de Mariage !</h1>
+          <p className="sous-titre">Célébrons 365 jours de vie commune, d'amour et de bonheur</p>
         </header>
         
         <div className="compteur-temps">
@@ -94,9 +96,9 @@ const AnniversaireFiancailles = () => {
         </div>
         
         <div className="message-amour">
-          <p>Il y a un an, nous nous sommes promis de passer notre vie ensemble.</p>
-          <p>Chaque instant depuis a été un pas merveilleux vers notre éternité.</p>
-          <p>Je t'aime plus chaque jour qui passe.</p>
+          <p>Il y a un an, nous avons uni nos vies pour toujours.</p>
+          <p>Chaque jour passé à tes côtés est un cadeau précieux.</p>
+          <p>Mon amour pour toi ne fait que grandir.</p>
         </div>
         
         <button 
@@ -114,7 +116,7 @@ const AnniversaireFiancailles = () => {
             </div>
             <div className="carte-souvenir">
               <div className="placeholder-image">
-                <span>Photo : {souvenirs[souvenirActuel].titre}</span>
+                <img src={souvenirs[souvenirActuel].photo}></img>
               </div>
               <h3>{souvenirs[souvenirActuel].titre}</h3>
               <p>{souvenirs[souvenirActuel].description}</p>
@@ -123,19 +125,19 @@ const AnniversaireFiancailles = () => {
         )}
         
         <div className="citations-romantiques">
-          <blockquote>"La meilleure chose à laquelle se tenir dans la vie, c'est l'un à l'autre." - Audrey Hepburn</blockquote>
-          <blockquote>"J'ai vu que tu étais parfaite, alors je t'ai aimée. Puis j'ai vu que tu n'étais pas parfaite et je t'ai aimée encore plus." - Angelita Lim</blockquote>
-          <blockquote>"L'amour ne compte pas les années, il compte les moments." - Proverbe français</blockquote>
+          <blockquote>"Un bon mariage est celui où chacun nomme l'autre gardien de sa solitude." - Rainer Maria Rilke</blockquote>
+          <blockquote>"Le mariage n'est pas seulement l'amour. C'est cette petite tasse de café offerte chaque matin." - Barbara de Angelis</blockquote>
+          <blockquote>"Le plus grand bonheur de la vie est la conviction d'être aimé pour soi-même." - Victor Hugo</blockquote>
         </div>
         
         <footer>
-          <p>Créé avec ❤️ pour la plus incroyable femme</p>
-          <p>Pour toujours à toi, MOHAMED Sarah Murielle</p>
-          <p className="date-anniversaire">20 Juin 2024 - 20 Juin 2025</p>
+          <p>Créé avec ❤️ pour la plus merveilleuse des épouses</p>
+          <p>Pour l'éternité, MOHAMED Sarah Murielle</p>
+          <p className="date-anniversaire">8 Août 2024 - 8 Août 2025</p>
         </footer>
       </div>
     </div>
   );
 };
 
-export default AnniversaireFiancailles;
+export default AnniversaireMariage;
